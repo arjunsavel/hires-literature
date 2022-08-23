@@ -27,6 +27,17 @@ The below data fields for *theoretical* works are slated to be tracked:
 - [ ] Comments (e.g., author caveats)
 - [ ] Subfield tags (e.g., astrobiology)
 
+
+The below data fields for *instrument* are slated to be tracked:
+- [ ] Resolution
+- [ ] Wavelength min
+- [ ] Wavelength max
+- [ ] First light
+- [ ] Normal telescope it's mounted in
+- [ ] Location of that telescope
+- [ ] Altitude of that telescope
+- [ ] Comments (e.g., other available modes)
+
 In addition to the raw data tracking, this repository will generate the following plots:
 - [x] Number of theory papers over time
 - [x] Number of theory papers that are multidimensional
