@@ -36,7 +36,7 @@ def add_copyright(ax, color='black'):
                     bbox=dict(color='w', alpha=1e-6, url=url), zorder=100, annotation_clip=False,
                xycoords='axes fraction')
     
-    ax.annotate(f"Generated on {today.strftime("%m/%d/%Y")}", xy=xy3, xytext=xy3,
+    ax.annotate(f"""Generated on {today.strftime("%m/%d/%Y")}""", xy=xy3, xytext=xy3,
                     url=url, color=color,
                     bbox=dict(color='w', alpha=1e-6, url=url), zorder=100, annotation_clip=False,
                xycoords='axes fraction')
