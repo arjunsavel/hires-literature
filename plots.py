@@ -8,6 +8,9 @@ from IPython.display import set_matplotlib_formats
 import pandas as pd
 import numpy as np
 from matplotlib import rc
+from datetime import date
+
+
 rc('font', family='serif',
                   style='normal', variant='normal',
                   stretch='normal', weight='normal')
@@ -17,8 +20,12 @@ set_matplotlib_formats("svg")
 # todo: add the correct zenodo
 
 def add_copyright(ax, color='black'):
+    today = date.today()
+    
+
     xy1 = ((-.05, -.1))
     xy2 = ((-.05, -.15))
+    xy3 = ((-.05, -.2))
 
     url = 'https://doi.org/10.5281/zenodo.2842910'
     ax.annotate("(c) Arjun Savel, Hayley Beltz, and Isaac Malsky 2022.", xy=xy1, xytext=xy1, zorder=100, 
@@ -26,6 +33,11 @@ def add_copyright(ax, color='black'):
 
     ax.annotate("Cite with Zenodo", xy=xy2, xytext=xy2,
                     url=url, color='navy',
+                    bbox=dict(color='w', alpha=1e-6, url=url), zorder=100, annotation_clip=False,
+               xycoords='axes fraction')
+    
+    ax.annotate(f"Generated on {today.strftime("%m/%d/%Y")}", xy=xy3, xytext=xy3,
+                    url=url, color=color,
                     bbox=dict(color='w', alpha=1e-6, url=url), zorder=100, annotation_clip=False,
                xycoords='axes fraction')
     return
