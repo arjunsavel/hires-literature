@@ -4,6 +4,8 @@
 
 This repo aims to contain all papers related to high-resolution spectroscopy of exoplanet atmospheres — theory and observation. The status of this work can be tracked in the [related project](https://github.com/users/arjunsavel/projects/1). 
 
+The notebook is for exploratory plots and explicit workings-through. Also, new entries are currently added via the notebook (though this will soon change!).
+
 The below data fields for *observational* works are slated to be tracked:
 - [x] Lead author
 - [x] Target name
