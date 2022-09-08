@@ -1,6 +1,7 @@
 # hires-literature
 
-[![Generate plots](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml/badge.svg)](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml) [![Scrape ArXiv](https://github.com/arjunsavel/hires-literature/actions/workflows/scrape_arxiv.yml/badge.svg)](https://github.com/arjunsavel/hires-literature/actions/workflows/scrape_arxiv.yml)
+[![Generate plots](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml/badge.svg)](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml) [![Scrape ArXiv](https://github.com/arjunsavel/hires-literature/actions/workflows/scrape_arxiv.yml/badge.svg)](https://github.com/arjunsavel/hires-literature/actions/workflows/scrape_arxiv.yml) [![DOI](https://zenodo.org/badge/527634198.svg)](https://zenodo.org/badge/latestdoi/527634198)
+
 
 This repo aims to contain all papers related to high-resolution spectroscopy of exoplanet atmospheres — theory and observation. The status of this work can be tracked in the [related project](https://github.com/users/arjunsavel/projects/1). 
 
