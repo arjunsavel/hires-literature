@@ -26,7 +26,7 @@ jobs:
         python-version: 3.7
     - name: scrape the arxiv
       run: |
-        pip arxivscraper
+        pip install -r requirements.txt
         python scrape_arxiv.py
         
     - run: git pull
