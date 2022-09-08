@@ -34,20 +34,20 @@ def check_hires(frame):
     frame['hires?'] = hires
     
 if __name__=='__main__':
-  today = date.today().strftime("%Y-%m-%d")
-  yesterday = today - timedelta(days = 1)
+    today = date.today().strftime("%Y-%m-%d")
+    yesterday = today - timedelta(days = 1)
 
-  scraper = arxivscraper.Scraper(
+    scraper = arxivscraper.Scraper(
     category='physics:astro-ph', 
     date_from=yesterday, date_until=today,
     filters={'abstract':['exoplanet']})
     output = scraper.scrape()
 
-  cols = ('id', 'title', 'categories', 'abstract', 'doi', 'created', 'updated', 'authors', 'affiliation', 'url')
-  df = pd.DataFrame(output,columns=cols)
-  hires_frame = df[df['hires?']==True]
+    cols = ('id', 'title', 'categories', 'abstract', 'doi', 'created', 'updated', 'authors', 'affiliation', 'url')
+    df = pd.DataFrame(output,columns=cols)
+    hires_frame = df[df['hires?']==True]
   
-  if len(hires_frame) != 0:
-    hires_frame.to_csv(f'potential_hires_papers_{yesterday}.csv')
+    if len(hires_frame) != 0:
+        hires_frame.to_csv(f'data/potential_hires_papers_{yesterday}.csv')
     
     

@@ -62,7 +62,7 @@ def papers_over_years(theory_frame, observe_frame):
     
     add_copyright(ax, color='black')
     
-    plt.savefig('papers_over_years.jpg', dpi=300)
+    plt.savefig('plots/papers_over_years.jpg', dpi=300)
     
 
 def water_detections(observe_frame):
@@ -90,7 +90,7 @@ def water_detections(observe_frame):
     add_copyright(ax, color='white')
 
 
-    plt.savefig('water.jpg', dpi=300)
+    plt.savefig('plots/water.jpg', dpi=300)
     
 def hrs_obs_latest_gridded(observe_frame):
     """
@@ -147,7 +147,7 @@ def hrs_obs_latest_gridded(observe_frame):
 #     ax.text(-2, -10, f"""Arjun Savel — {datetime.today().strftime('%Y-%m-%d')}""", fontsize=15)
 
 
-    plt.savefig('2022_histogram.jpg', bbox_inches='tight', dpi=300)
+    plt.savefig('plots/2022_histogram.jpg', bbox_inches='tight', dpi=300)
     
 def theory_plot(theory_frame):
     three_d_percent = len(theory_frame[theory_frame.dimensions==3])/len(theory_frame)
@@ -163,13 +163,13 @@ def theory_plot(theory_frame):
 
     ax.set_title('Hi-res theory papers', fontsize=25)
     add_copyright(ax, color='black')
-    plt.savefig('theory_plot.jpg', bbox_inches='tight', dpi=300)
+    plt.savefig('plots/theory_plot.jpg', bbox_inches='tight', dpi=300)
 
 
 if __name__=='__main__':
     # load the frames
-    theory_frame = pd.read_csv('theory_frame.csv')
-    observe_frame = pd.read_csv('observe_frame.csv')
+    theory_frame = pd.read_csv('data/theory_frame.csv')
+    observe_frame = pd.read_csv('data/observe_frame.csv')
     
     # run the plots
     theory_plot(theory_frame)
