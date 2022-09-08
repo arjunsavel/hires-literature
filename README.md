@@ -1,5 +1,7 @@
 # hires-literature
 
+[![Generate plots](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml/badge.svg)](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml)
+
 This repo aims to contain all papers related to high-resolution spectroscopy of exoplanet atmospheres — theory and observation. The status of this work can be tracked in the [related project](https://github.com/users/arjunsavel/projects/1). 
 
 The below data fields for *observational* works are slated to be tracked:
