@@ -36,14 +36,14 @@ The below data fields for *theoretical* works are slated to be tracked:
 
 
 The below data fields for *instrument* are slated to be tracked:
-- [ ] Resolution
-- [ ] Wavelength min
-- [ ] Wavelength max
-- [ ] First light
-- [ ] Normal telescope it's mounted in
-- [ ] Location of that telescope
-- [ ] Altitude of that telescope
-- [ ] Comments (e.g., other available modes)
+- [x] Resolution
+- [x] Wavelength min
+- [x] Wavelength max
+- [x] First light
+- [x] Normal telescope it's mounted in
+- [x] Location of that telescope
+- [x] Altitude of that telescope
+- [x] Comments (e.g., other available modes)
 
 In addition to the raw data tracking, this repository will generate the following plots:
 - [x] Number of theory papers over time
