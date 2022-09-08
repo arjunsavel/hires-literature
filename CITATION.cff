@@ -1,0 +1,15 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Savel
+    given-names: Arjun
+    orcid: https://orcid.org/0000-0002-2454-768X
+  - family-names: Beltz
+    given-names: Hayley
+    orcid: https://orcid.org/0000-0002-6980-052X
+  - family-names: Malsky
+    given-names: Isaac
+    orcid: https://orcid.org/0000-0003-0217-3880
+title: arjunsavel/hires-literature: v0.1.2-alpha
+version: v0.1.2-alpha
+date-released: 2022-09-08
