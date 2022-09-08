@@ -2,8 +2,10 @@
 
 [![Generate plots](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml/badge.svg)](https://github.com/arjunsavel/hires-literature/actions/workflows/generate_plots.yml) [![Scrape ArXiv](https://github.com/arjunsavel/hires-literature/actions/workflows/scrape_arxiv.yml/badge.svg)](https://github.com/arjunsavel/hires-literature/actions/workflows/scrape_arxiv.yml) [![DOI](https://zenodo.org/badge/527634198.svg)](https://zenodo.org/badge/latestdoi/527634198)
 
+Made with Hayley Beltz and Isaac Malsky. Special thanks to Vivien Parmentier for benchmarking (Table 4 of [Guillot et al. 2022](https://arxiv.org/pdf/2205.04100.pdf)).
 
-This repo aims to contain all papers related to high-resolution spectroscopy of exoplanet atmospheres — theory and observation. The status of this work can be tracked in the [related project](https://github.com/users/arjunsavel/projects/1). 
+
+This repo aims to contain all papers related to high-resolution spectroscopy of exoplanet atmospheres — theory and observation. The status of this work can be tracked in the [related project](https://github.com/users/arjunsavel/projects/1).
 
 The notebook is for exploratory plots and explicit workings-through. Also, new entries are currently added via the notebook (though this will soon change!).
 
