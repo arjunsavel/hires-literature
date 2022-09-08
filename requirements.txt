@@ -2,3 +2,4 @@ matplotlib
 Ipython
 numpy
 pandas
+arxivscraper
