@@ -19,19 +19,23 @@ set_matplotlib_formats("svg")
 
 # todo: add the correct zenodo
 
-def add_copyright(ax, color='black'):
+def add_copyright(ax, color='black', lower=False):
     today = date.today()
     
+    if lower:
+        xy1 = ((-.05, -.13))
+        xy2 = ((-.05, -.18))
+        xy3 = ((-.05, -.23))
+    else:
+        xy1 = ((-.05, -.12))
+        xy2 = ((-.05, -.17))
+        xy3 = ((-.05, -.22))
 
-    xy1 = ((-.05, -.1))
-    xy2 = ((-.05, -.15))
-    xy3 = ((-.05, -.2))
-
-    url = 'https://doi.org/10.5281/zenodo.2842910'
+    url = 'https://zenodo.org/badge/latestdoi/527634198'
     ax.annotate("(c) Arjun Savel, Hayley Beltz, and Isaac Malsky 2022.", xy=xy1, xytext=xy1, zorder=100, 
                 xycoords='axes fraction', annotation_clip=False, color=color)
 
-    ax.annotate("Cite with Zenodo", xy=xy2, xytext=xy2,
+    ax.annotate(f"Cite with Zenodo: {url}", xy=xy2, xytext=xy2,
                     url=url, color='navy',
                     bbox=dict(color='w', alpha=1e-6, url=url), zorder=100, annotation_clip=False,
                xycoords='axes fraction')
@@ -104,8 +108,8 @@ def hrs_obs_latest_gridded(observe_frame):
     hrs_frame = hrs_frame.replace({'species': 'H2O'}, {'species': r'H$_2$O'}, regex=True)
     hrs_frame = hrs_frame.replace({'species': 'Na D1'}, {'species': r'Na'}, regex=True)
     hrs_frame = hrs_frame.replace({'species': 'Na D2'}, {'species': r'Na'}, regex=True)
-    hrs_frame = hrs_frame.replace({'species': 'Ca+ H'}, {'species': r'Ca+'}, regex=True)
-    hrs_frame = hrs_frame.replace({'species': 'Ca+ K'}, {'species': r'Ca+'}, regex=True)
+    hrs_frame = hrs_frame.replace({'species': 'Ca+ H'}, {'species': r'Ca+'}, regex=False)
+    hrs_frame = hrs_frame.replace({'species': 'Ca+ K'}, {'species': r'Ca+'}, regex=False)
     hrs_frame = hrs_frame.replace({'species': 'H alpha'}, {'species': r'H$\alpha$'})
     hrs_frame = hrs_frame.replace({'species': 'H beta'}, {'species': r'H$\beta$'})
     hrs_frame = hrs_frame.replace({'species': 'H gamma'}, {'species': r'H$\gamma$'})
@@ -143,7 +147,7 @@ def hrs_obs_latest_gridded(observe_frame):
                   grid=False)
     ax2.set_xlim([2010, 2023])
     ax2.set_title('')
-    add_copyright(ax, color='black')
+    add_copyright(ax, color='black', lower=True)
 #     ax.text(-2, -10, f"""Arjun Savel — {datetime.today().strftime('%Y-%m-%d')}""", fontsize=15)
 
 
