@@ -35,7 +35,7 @@ def check_hires(frame):
     
 if __name__=='__main__':
     today = date.today().strftime("%Y-%m-%d")
-    yesterday = today - timedelta(days = 1)
+    yesterday = date.today() - timedelta(days = 1)
 
     scraper = arxivscraper.Scraper(
     category='physics:astro-ph', 
