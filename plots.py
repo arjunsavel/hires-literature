@@ -11,6 +11,7 @@ from matplotlib import rc
 from datetime import date
 
 
+
 rc('font', family='serif',
                   style='normal', variant='normal',
                   stretch='normal', weight='normal')
@@ -77,7 +78,8 @@ def water_detections(observe_frame):
     """
     
     hrs_frame = observe_frame[observe_frame.SNR > 4.5]
-    water_frame = hrs_frame[hrs_frame.species=='H$_2$O']
+
+    water_frame = hrs_frame[hrs_frame.species=='H2O']
     fig, ax = plt.subplots(figsize=(10,8), facecolor='#264e5a')
 
     hrs_frame.hist('year', bins=np.arange(2010, 2023), ax=ax, color='#264e5a', label='Detections')
