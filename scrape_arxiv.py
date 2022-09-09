@@ -45,6 +45,7 @@ if __name__=='__main__':
 
     cols = ('id', 'title', 'categories', 'abstract', 'doi', 'created', 'updated', 'authors', 'affiliation', 'url')
     df = pd.DataFrame(output,columns=cols)
+    check_hires(df)
     hires_frame = df[df['hires?']==True]
   
     if len(hires_frame) != 0:
