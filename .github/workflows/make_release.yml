@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - '**.cff'
+    branches:
+      - 'main'
 jobs:
 
   build:
