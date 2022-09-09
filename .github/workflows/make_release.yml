@@ -1,16 +1,17 @@
 name: Publish Release
 on:
   push:
-    tags:
-      - 'v*'
+    paths:
+      - '**.cff'
 jobs:
+
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-    - uses: actions/checkout@v3
-    - name: Create a Release
-      uses: elgohr/Github-Release-Action@v4
-      env:
-        GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+    - uses: actions/checkout@v2
+    - uses: ncipollo/release-action@v1
       with:
-        title: ${{ github.ref_name }}
+        tag: ${{ github.event.head_commit.message }}
+        token: ${{ secrets.RELEASE_TOKEN }}
