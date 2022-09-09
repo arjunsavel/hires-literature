@@ -66,6 +66,8 @@ def papers_over_years(theory_frame, observe_frame):
     
     add_copyright(ax, color='black')
     
+    plt.tight_layout()
+    
     plt.savefig('plots/papers_over_years.jpg', dpi=300)
     
 
@@ -76,7 +78,7 @@ def water_detections(observe_frame):
     
     hrs_frame = observe_frame[observe_frame.SNR > 4.5]
     water_frame = hrs_frame[hrs_frame.species=='H$_2$O']
-    fig, ax = plt.subplots(figsize=(10,6), facecolor='#264e5a')
+    fig, ax = plt.subplots(figsize=(10,8), facecolor='#264e5a')
 
     hrs_frame.hist('year', bins=np.arange(2010, 2023), ax=ax, color='#264e5a', label='Detections')
     water_frame.hist('year', bins=np.arange(2010, 2023), ax=ax, color='gray', label='Water detections')
@@ -92,6 +94,8 @@ def water_detections(observe_frame):
     plt.yscale('log')
     
     add_copyright(ax, color='white')
+    
+    plt.tight_layout()
 
 
     plt.savefig('plots/water.jpg', dpi=300)
@@ -157,7 +161,7 @@ def theory_plot(theory_frame):
     three_d_percent = len(theory_frame[theory_frame.dimensions==3])/len(theory_frame)
 
 
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(10, 8.70))
     ax.hist(theory_frame.year, color='teal')
     ax.set_xlabel('Year', fontsize=25)
     ax.set_ylabel('Count', fontsize=25)
