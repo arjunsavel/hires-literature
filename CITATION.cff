@@ -4,6 +4,9 @@ authors:
   - family-names: Savel
     given-names: Arjun
     orcid: https://orcid.org/0000-0002-2454-768X
+  - family-names: M.-R. Kempton
+    given-names: Eliza
+    orcid: https://orcid.org/0000-0002-1337-9051
   - family-names: Beltz
     given-names: Hayley
     orcid: https://orcid.org/0000-0002-6980-052X
@@ -11,5 +14,5 @@ authors:
     given-names: Isaac
     orcid: https://orcid.org/0000-0003-0217-3880
 title: "arjunsavel/hires-literature"
-version: v1.0.1-alpha
+version: v1.0.2-alpha
 date-released: 2022-09-09
