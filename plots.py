@@ -20,7 +20,7 @@ set_matplotlib_formats("svg")
 
 # todo: add the correct zenodo
 
-def add_copyright(ax, color='black', lower=False):
+def add_copyright(ax, color='black', lower=False, much_lower=False):
     today = date.today()
     
     if lower:
@@ -31,9 +31,13 @@ def add_copyright(ax, color='black', lower=False):
         xy1 = ((-.05, -.12))
         xy2 = ((-.05, -.17))
         xy3 = ((-.05, -.22))
+    if much_lower:
+        xy1 = ((-.05, -.32))
+        xy2 = ((-.05, -.37))
+        xy3 = ((-.05, -.42))
 
     url = 'https://zenodo.org/badge/latestdoi/527634198'
-    ax.annotate("(c) Arjun Savel, Hayley Beltz, and Isaac Malsky 2022.", xy=xy1, xytext=xy1, zorder=100, 
+    ax.annotate("(c) Arjun Savel, Eliza Kempton, Hayley Beltz, and Isaac Malsky 2022.", xy=xy1, xytext=xy1, zorder=100, 
                 xycoords='axes fraction', annotation_clip=False, color=color)
 
     ax.annotate(f"Cite with Zenodo: {url}", xy=xy2, xytext=xy2,
@@ -70,6 +74,45 @@ def papers_over_years(theory_frame, observe_frame):
     plt.tight_layout()
     
     plt.savefig('plots/papers_over_years.jpg', dpi=300)
+    
+def instruments_counts_plot(observe_frame):
+    """
+    inputs: the dataframes!
+    """
+    hrs_frame = observe_frame[observe_frame.SNR > 4.5]
+    insts = hrs_frame['instrument'].value_counts().keys()
+    insts_counts = hrs_frame['instrument'].value_counts().values
+    # split up times that two instruments were used for a study
+    inst_count_dict = dict(zip(insts, insts_counts))
+
+    for i, inst in enumerate(insts):
+        if ', ' in inst:
+
+            inst_list = inst.split(', ')
+            del inst_count_dict[inst]
+            counts = insts_counts[i]
+            for ind_inst in inst_list:
+                if ind_inst in inst_count_dict.keys():
+                    inst_count_dict[ind_inst] += counts
+                else:
+                    inst_count_dict[ind_inst] = counts
+    (insts,counts) = zip(*inst_count_dict.items())
+    insts = list(insts)
+    insts = [inst.replace('Keck Planet Imager and Characterizer','KPIC') for inst in insts]
+    inst_count_frame = pd.DataFrame({'inst': insts,
+                                'counts':counts})
+    inst_count_frame = inst_count_frame.sort_values(by='counts')
+    fig, ax =  plt.subplots(figsize=(10,6))
+    inst_count_frame.plot.bar(ax=ax, x='inst', color='teal')
+    ax.legend('', frameon=False)
+    ax.set_ylabel('Number of detected species', fontsize=14)
+    ax.set_xlabel('Instrument / configuration', fontsize=14)
+
+    add_copyright(ax, color='black', much_lower=True)
+
+    plt.savefig('plots/instrument_counts.jpg', dpi=300,bbox_inches='tight')
+
+
     
 
 def water_detections(observe_frame):
@@ -184,6 +227,7 @@ if __name__=='__main__':
     # run the plots
     theory_plot(theory_frame)
     hrs_obs_latest_gridded(observe_frame)
+    instruments_counts_plot(observe_frame)
     water_detections(observe_frame)
     papers_over_years(theory_frame, observe_frame)
     # todo: papers by each year
