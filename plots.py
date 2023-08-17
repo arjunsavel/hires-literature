@@ -37,7 +37,7 @@ def add_copyright(ax, color='black', lower=False, much_lower=False):
         xy3 = ((-.05, -.42))
 
     url = 'https://zenodo.org/badge/latestdoi/527634198'
-    ax.annotate("(c) Arjun Savel, Eliza Kempton, Hayley Beltz, and Isaac Malsky 2022.", xy=xy1, xytext=xy1, zorder=100, 
+    ax.annotate("(c) Arjun Savel, Eliza Kempton, Hayley Beltz, and Isaac Malsky 2023.", xy=xy1, xytext=xy1, zorder=100, 
                 xycoords='axes fraction', annotation_clip=False, color=color)
 
     ax.annotate(f"Cite with Zenodo: {url}", xy=xy2, xytext=xy2,
