@@ -42,7 +42,7 @@ if __name__=='__main__':
     date_from=yesterday, date_until=today,
     filters={'abstract':['exoplanet']})
     output = scraper.scrape()
-
+    print(output)
     cols = ('id', 'title', 'categories', 'abstract', 'doi', 'created', 'updated', 'authors', 'affiliation', 'url')
     df = pd.DataFrame(output,columns=cols)
     check_hires(df)
