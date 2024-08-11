@@ -14,5 +14,8 @@ authors:
     given-names: Isaac
     orcid: https://orcid.org/0000-0003-0217-3880
 title: "arjunsavel/hires-literature"
-version: v1.0.3-beta
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.7063148
+version: v1.0.4-beta
 date-released: 2024-08-11
