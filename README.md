@@ -9,6 +9,11 @@ This repo aims to contain all papers related to high-resolution spectroscopy of 
 
 The notebook is for exploratory plots and explicit workings-through. Also, new entries are currently added via the notebook (though this will soon change!).
 
+Known weaknesses:
+- retrieval results
+- direct imaging
+- single lines (escape)
+
 The below data fields for *observational* works are slated to be tracked:
 - [x] Lead author
 - [x] Target name
