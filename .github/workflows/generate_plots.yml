@@ -22,7 +22,7 @@ jobs:
     - name: Setup Python
       uses: actions/setup-python@master
       with:
-        python-version: 3.7
+        python-version: 3.11
     - name: install requirements
       run: |
         pip install -r requirements.txt
