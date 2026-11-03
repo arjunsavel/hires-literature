@@ -4,16 +4,19 @@ on:
     paths:
       - '**.cff'
     branches:
-      - 'main'
-jobs:
+      - main
+  workflow_dispatch:
 
+jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-    - uses: actions/checkout@v2
-    - uses: ncipollo/release-action@v1
-      with:
-        tag: ${{ github.event.head_commit.message }}
-        token: ${{ secrets.RELEASE_TOKEN }}
+      - uses: actions/checkout@v4
+      - name: Get version from CITATION.cff
+        id: version
+        run: echo "version=$(grep '^version:' CITATION.cff | awk '{print $2}' | tr -d '\"')" >> "$GITHUB_OUTPUT"
+      - uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.version.outputs.version }}
